@@ -102,7 +102,7 @@ docker run --rm --privileged -v /data:/data -p 8000:8000 -ti final_project_edge:
 ```
 3. Clone repo within the container
 ```
-git clone 
+git clone https://github.com/fvergaracontesse/W251-Final-Project-NM-FV.git
 ```
 4. Install keras
 ```
@@ -118,7 +118,7 @@ run python3 -m http.server --cgi 8000
 
 1. Clone repository
 ```
-git clone repo
+git clone https://github.com/fvergaracontesse/W251-Final-Project-NM-FV.git
 
 ```
 2. Go to main folder and run
