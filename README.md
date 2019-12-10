@@ -84,12 +84,51 @@ ibmcloud cos put-object --bucket hwe-w251-nm-fv --key KEY --body PATH/Filename
 ### Run pipeline
 
 ```
+pipenv install
 pipenv shell
 python run_pipeline.py
 
 ```
 
-## Jetson TX2 - Edge Configuration
+## Jetson TX2 - Edge Configuration for predictions
+
+1.Build docker image
+```
+docker build -t final_project_edge -f Dockerfile.edge .
+```
+2.Start container
+```
+docker run --rm --privileged -v /data:/data -p 8000:8000 -ti final_project_edge:latest bash
+```
+3. Clone repo within the container
+```
+git clone 
+```
+4. Install keras
+```
+pip3 install keras
+```
+5. Modify mnist.py to run with python instead of pipenv modifying shebang on the top to python.
+6. Got to webapp folder on the repo and run
+```
+run python3 -m http.server --cgi 8000
+```
+
+## Ubuntu 18 - Configuration for predictions
+
+1. Clone repository
+```
+git clone repo
+
+```
+2. Go to main folder and run
+ ```
+ pipenv install
+ pipenv shell
+ pipenv run python3 -m http.server --cgi 8000
+ ```
+
+
 
 
 
